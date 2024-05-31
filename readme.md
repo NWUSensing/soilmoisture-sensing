@@ -1,4 +1,10 @@
-**Assuming we are in the CS directory, including command line mode**
+# Soil Moisture Sensing by RFID tags
+
+This repository contains the relevant files for our soil moisture sensing project based on UHF RFID tags. Specifically, we find the fact that Commercial Off-The-Shelf (COTS) RFID tags are already impedance-matched in terms of their antenna and chip design. When these tags are attached to a pot, the impedance of the tag antenna is affected by the soil moisture inside the pot, which disrupts the impedance matching and increases the minimum transmission power(MRT) of the tag.
+
+Inspired by this phenomenon, we have designed the RFID tags in a special way so that they initially reside in an impedance-mismatched state. As the tags are partially inserted into the soil, the impedance of the tag's antenna changes, improving the degree of impedance matching. This, in turn, affects the received signal strength indicator (RSSI). Additionally, we assign a reference tag to each moisture-sensing tag to mitigate environmental influences. Finally, by measuring the difference between the RSSI of the designed tag and the reference tag, known as Differential RSSI, we estimate the soil moisture.
+
+Assuming we are in the CS directory, including command line mode
 
 ## Directory Structure
 
@@ -27,41 +33,42 @@ Recompile the modifiedx`ReadAsync.cs`:
 1. Check the drone for flight readiness, start the RFID reader and Raspberry Pi, use Wi-Fi to remotely connect to the Raspberry Pi from the laptop using VS Code.
 
 2. Start the reader and redirect the output to nohup.out, keep the reader in a reading state until the end of the experiment, and activate the Python environment simultaneously.
-```bash
-nohup Linux/ReadAsync tmr:///dev/ttyACM0 --ant 1,2 &
-source ./moisture_estimation/env/bin/activate
-```
+
+    ```bash
+    nohup Linux/ReadAsync tmr:///dev/ttyACM0 --ant 1,2 &
+    source ./moisture_estimation/env/bin/activate
+    ```
 
 3. Check the latest tag information that the reader has currently read, observe if the reader is working properly.
-```bash
-tail --line 50 nohup.out`
-```
-![tail output](./data/tail%20output.png)
+
+    ```bash
+    tail --line 50 nohup.out`
+    ```
+
+    ![tail output](./data/tail%20output.png)
 
 4. Pilot the drone to fly near the tag that needs to be measured (typically directly in front of the tag in our experiment).
 
-
 5. Run detect.py, and then our program will detect the tag numbers that can be read during this period of time. From these numbers, we will select the tag number for which we want to save the data. Subsequently, the program will save the data read by the reader in the `./moisture_estimation/data` directory, specifically in the `Data_ID.txt` file. For example:
-```bash
-python ./moisture_estimation/detect.py
-```
-![detect](./data/detect.gif)
 
-![detect result](./data/detect%20result.png)
+    ```bash
+    python ./moisture_estimation/detect.py
+    ```
 
+    ![detect](./data/detect.gif)
+
+    ![detect result](./data/detect%20result.png)
 
 6. Obtain soil moisture estimation for the deployment location of the tags.
-```bash
-python ./moisture_estimation/predict.py ID
-```
 
-Then, you will obtain the corresponding soil moisture estimation for the tags at the time when our predict.py is running, and the results will be saved in `./moisture_estimation/vwc_estimation.txt`. (As shown in the figure below, the two estimation values are from data received by two different antennas. The `NaN` value in the moisture estimation result is because the antenna did not receive complete data.)
+    ```bash
+    python ./moisture_estimation/predict.py ID
+    ```
 
-![moisture estimation](./data/estimation.png)
+    Then, you will obtain the corresponding soil moisture estimation for the tags at the time when our predict.py is running, and the results will be saved in `./moisture_estimation/vwc_estimation.txt`. (As shown in the figure below, the two estimation values are from data received by two different antennas. The `NaN` value in the moisture estimation result is because the antenna did not receive complete data.)
+
+    ![moisture estimation](./data/estimation.png)
 
 7. Continue operating the drone to proceed to the next tag deployment location.
 
-
-
 **Note**: if you want to change the in/out-put path and so on, please pay attention to lines 205, 206 in the predict.py and lines 8, 31, 56, 57, 69, 132 in the detect.py.
-
