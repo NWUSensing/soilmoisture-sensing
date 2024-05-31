@@ -4,8 +4,6 @@ This repository contains the relevant files for our soil moisture sensing projec
 
 Inspired by this phenomenon, we have designed the RFID tags in a special way so that they initially reside in an impedance-mismatched state. As the tags are partially inserted into the soil, the impedance of the tag's antenna changes, improving the degree of impedance matching. This, in turn, affects the received signal strength indicator (RSSI). Additionally, we assign a reference tag to each moisture-sensing tag to mitigate environmental influences. Finally, by measuring the difference between the RSSI of the designed tag and the reference tag, known as Differential RSSI, we estimate the soil moisture.
 
-Assuming we are in the CS directory, including command line mode
-
 ## Directory Structure
 
 Except for the "./moisture_estimation" directory, all other directories contain files used by the ThingMagic MercuryAPI to control the reader. Our code for controlling the reader is located in `./TMR_Read`, and by modifying the symbolic link file `ReadAsync.cs`, we can change the reader's behavior, such as the reading time on each channel on each channels and TxPower.
