@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = ThingMagic.ReaderLinux
+build_property.ProjectDir = /home/pi/Desktop/mercuryapi-1.37.2.24/cs/ThingMagic.ReaderLinux/

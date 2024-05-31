@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "8ky8q6MlQdscRBtgS+tr31dvP+efxAyVI/q3HwAfQYcg5xgotQMLS6WKr69qa9SfSceZ98ssZ7GxlElyHgrLnQ==",
+  "success": true,
+  "projectFilePath": "/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Samples/InventoryManagementAppLinux/InventoryManagementAppLinux.csproj",
+  "expectedPackageFiles": [
+    "/home/pi/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "/home/pi/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "/home/pi/.nuget/packages/runtime.linux-arm.runtime.native.system.io.ports/6.0.0/runtime.linux-arm.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "/home/pi/.nuget/packages/runtime.linux-arm64.runtime.native.system.io.ports/6.0.0/runtime.linux-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "/home/pi/.nuget/packages/runtime.linux-x64.runtime.native.system.io.ports/6.0.0/runtime.linux-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "/home/pi/.nuget/packages/runtime.native.system.io.ports/6.0.0/runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "/home/pi/.nuget/packages/runtime.osx-arm64.runtime.native.system.io.ports/6.0.0/runtime.osx-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "/home/pi/.nuget/packages/runtime.osx-x64.runtime.native.system.io.ports/6.0.0/runtime.osx-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "/home/pi/.nuget/packages/system.io.ports/6.0.0/system.io.ports.6.0.0.nupkg.sha512",
+    "/home/pi/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
+    "/home/pi/.nuget/packages/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "/home/pi/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,10 @@
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/netstandard2.0/MercuryAPI.deps.json
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/netstandard2.0/MercuryAPI.dll
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/netstandard2.0/MercuryAPI.pdb
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/ThingMagic.ReaderLinux/obj/Debug/netstandard2.0/ThingMagic.ReaderLinux.csproj.AssemblyReference.cache
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/ThingMagic.ReaderLinux/obj/Debug/netstandard2.0/ThingMagic.ReaderLinux.GeneratedMSBuildEditorConfig.editorconfig
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/ThingMagic.ReaderLinux/obj/Debug/netstandard2.0/ThingMagic.ReaderLinux.AssemblyInfoInputs.cache
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/ThingMagic.ReaderLinux/obj/Debug/netstandard2.0/ThingMagic.ReaderLinux.AssemblyInfo.cs
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/ThingMagic.ReaderLinux/obj/Debug/netstandard2.0/ThingMagic.ReaderLinux.csproj.CoreCompileInputs.cache
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/ThingMagic.ReaderLinux/obj/Debug/netstandard2.0/MercuryAPI.dll
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/ThingMagic.ReaderLinux/obj/Debug/netstandard2.0/MercuryAPI.pdb

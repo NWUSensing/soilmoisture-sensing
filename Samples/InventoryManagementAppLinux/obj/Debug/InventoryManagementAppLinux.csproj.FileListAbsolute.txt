@@ -1,0 +1,17 @@
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Linux/InventoryManagementApp
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Linux/InventoryManagementApp.deps.json
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Linux/InventoryManagementApp.runtimeconfig.json
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Linux/InventoryManagementApp.runtimeconfig.dev.json
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Linux/InventoryManagementApp.dll
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Linux/ref/InventoryManagementApp.dll
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Linux/InventoryManagementApp.pdb
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Samples/InventoryManagementAppLinux/obj/Debug/InventoryManagementAppLinux.csproj.AssemblyReference.cache
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Samples/InventoryManagementAppLinux/obj/Debug/InventoryManagementAppLinux.GeneratedMSBuildEditorConfig.editorconfig
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Samples/InventoryManagementAppLinux/obj/Debug/InventoryManagementAppLinux.AssemblyInfoInputs.cache
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Samples/InventoryManagementAppLinux/obj/Debug/InventoryManagementAppLinux.AssemblyInfo.cs
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Samples/InventoryManagementAppLinux/obj/Debug/InventoryManagementAppLinux.csproj.CoreCompileInputs.cache
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Samples/InventoryManagementAppLinux/obj/Debug/InventoryManagementAppLinux.csproj.CopyComplete
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Samples/InventoryManagementAppLinux/obj/Debug/InventoryManagementApp.dll
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Samples/InventoryManagementAppLinux/obj/Debug/ref/InventoryManagementApp.dll
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Samples/InventoryManagementAppLinux/obj/Debug/InventoryManagementApp.pdb
+/home/pi/Desktop/mercuryapi-1.37.2.24/cs/Samples/InventoryManagementAppLinux/obj/Debug/InventoryManagementAppLinux.genruntimeconfig.cache
