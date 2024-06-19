@@ -68,8 +68,14 @@ Recompile the modifiedx`ReadAsync.cs`:
 
     For 4G LTE: 
     ```bash
+    // In China
     HostName 8.tcp.cpolar.cn
     Port 11167
+    User user
+    password: 12345678
+    // In UK
+    HostName 1.tcp.eu.cpolar.io
+    Port 10054
     User user
     password: 12345678
     ```
