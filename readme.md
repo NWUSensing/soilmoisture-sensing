@@ -3,12 +3,12 @@
 This repository explains the workflow and files of our soil moisture sensing system based on UHF RFID tags. Specifically, we design RFID moisture sensing tags that their signal features, such as received signal strength (RSS) and phase, change with the soil moisture levels. Additionally, we assign a reference tag to each moisture-sensing tag to mitigate environmental influences. That is to say, we design our RFID moisture sensor with a sensing tag and a reference tag. Finally, by measuring the differential RSS of the two tags, our sensor can estimates the soil moisture.
 
 ## Overview and Hardware Preparation
-Figure below shows the connection of hardware used in our system:
+The below figure shows the hardware connections of our system:
 
 ![device](./data/device.png)
 
-- Our RFID moisture sensing tags are wirelessly connected to a FU-M6-M-4G RFID reader. 
-- The reader is connected to a Raspberry Pi 4B via USB for controlling the reader and collecting RSS data. 
+- Our RFID moisture sensors are wirelessly connected to a FU-M6-M-4G RFID reader.
+- The reader is connected to a Raspberry Pi 4B via USB for controlling the reader and collecting RSS data.
 - Based on the collected RSS data, the Raspberry Pi can estimate the moisture levels by using the code shown in this repository.
 - To remotely access the Raspberry Pi, we connect a 4G LTE module to it. To use the 4G module, one needs to insert a local SIM card into it. Alternatively,  one can use a local Wi-Fi network for a short distance remote connection or test.
 
