@@ -80,9 +80,6 @@ Recompile the modifiedx`ReadAsync.cs`:
     ![ssh connect](./data/remote_connet.gif)
     For local Wi-Fi: Ensure that the Raspberry Pi and laptop are connected to the same Wi-Fi, use `ssh user@GreenTag` to connect, and other operations are the same as using a 4G LTE. 
 
-
-Check the drone for flight readiness,
-
 3. **Check if the reader is working properly.** Place a test tag in front of the reader. Then, start the reader and redirect the output to nohup.out, keep the reader in a reading state until the end of the experiment, and activate the Python environment simultaneously.
 
     ```bash
@@ -117,7 +114,7 @@ Check the drone for flight readiness,
 
     ![detect result](./data/detect.png)
 
-6. **moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor. 
+6. **moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
 
     ```bash
     python ./moisture_estimation/predict.py SensorID
