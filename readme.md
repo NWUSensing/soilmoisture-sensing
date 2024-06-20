@@ -1,8 +1,6 @@
 # Soil Moisture Sensing with UHF RFID tags
 
-This repository explains the workflow and files of our soil moisture sensing system based on UHF RFID tags. Specifically, we design RFID moisture sensing tags that their signal features, such as received signal strength (RSS) and phase, change with the soil moisture levels. Additionally, we assign a reference tag to each moisture-sensing tag to mitigate environmental influences. That is to say, our RFID moisture sensor includes a reference tag and a sensing tag.
-
-Finally, by measuring the difference between the RSSI of the designed tag and the reference tag, known as Differential RSSI, we estimate the soil moisture.
+This repository explains the workflow and files of our soil moisture sensing system based on UHF RFID tags. Specifically, we design RFID moisture sensing tags that their signal features, such as received signal strength (RSS) and phase, change with the soil moisture levels. Additionally, we assign a reference tag to each moisture-sensing tag to mitigate environmental influences. That is to say, we design our RFID moisture sensor with a sensing tag and a reference tag. Finally, by measuring the differential RSS of the two tags, our sensor can estimates the soil moisture.
 
 ## Overview and Hardware Preparation
 Figure below shows the connection of hardware used in our system:
