@@ -11,6 +11,7 @@ The below figure shows the hardware connections of our system:
 - The reader is connected to a Raspberry Pi 4B via USB for controlling the reader and collecting RSS data.
 - Based on the collected RSS data, the Raspberry Pi can estimate the moisture levels by using the code shown in this repository.
 - To remotely access the Raspberry Pi, we connect a 4G LTE module to it. To use the 4G module, one needs to insert a local SIM card into it. Alternatively,  one can use a local Wi-Fi network for a short distance remote connection or test.
+**You may start to use our system from the `Quickstart'**
 
 
 ## Directory Structure
@@ -64,23 +65,23 @@ Recompile the modifiedx`ReadAsync.cs`:
     We use VSCode's Remote SSH to connect remotely to the Raspberry Pi. If Visual Studio Code is not installed on laptop, please refer to [Connect over SSH with vscode](https://code.visualstudio.com/docs/remote/ssh-tutorial) for installation.
     Then, open VS code, connect the Raspberry Pi with a laptop using a 4G LTE remote connection or a local Wi-Fi Conection. Once the connection is on, open the `/home/user/Desktop/soilmoisture-sensing` directory in the Pi via VS Code.
 
-    For 4G LTE: 
+    Remote Connection via 4G LTE:: 
     ```bash
     // In China
-    HostName 8.tcp.cpolar.cn
-    Port 11167
-    User user
+    HostName: 8.tcp.cpolar.cn
+    Port: 11167
+    User: user
     password: 12345678
     // In UK
-    HostName 1.tcp.eu.cpolar.io
-    Port 10054
-    User user
+    HostName: 1.tcp.eu.cpolar.io
+    Port: 10054
+    User: user
     password: 12345678
     ```
     ![ssh connect](./data/remote_connet.gif)
-    For local Wi-Fi: Ensure that the Raspberry Pi and laptop are connected to the same Wi-Fi, use `ssh user@GreenTag` to connect, and other operations are the same as using a 4G LTE. 
+    Remote Connection via local Wi-Fi: local Wi-Fi: Ensure that the Raspberry Pi and laptop are connected to the same Wi-Fi, use `ssh user@GreenTag` to connect, and other operations are the same as using a 4G LTE. 
 
-3. **Check if the reader is working properly.** Place a test tag in front of the reader. Then, start the reader and redirect the output to nohup.out, keep the reader in a reading state until the end of the experiment, and activate the Python environment simultaneously.
+3. **Check if the reader is working properly.** Place one RFID tag or one of our RFID moisture sensor in front of the reader. Then, start the reader and redirect the output to nohup.out, keep the reader in a reading state until the end of the experiment, and activate the Python environment simultaneously.
 
     ```bash
     nohup Linux/ReadAsync tmr:///dev/ttyACM0 --ant 1,2 &
@@ -101,31 +102,30 @@ Recompile the modifiedx`ReadAsync.cs`:
 
 5. **Extract the data of a targeted RFID moisture sensors at each location.**
 
-    Run `detect.py`, and it detect sensor IDs that can be read. From these IDs, we can Extract and save the data of our targeted sensors at each location.
+    Run `detect.py`, which detects sensor IDs that can be read. From these IDs, we can extract and save the data of our targeted sensors at each location.
 
 
-    Subsequently, the program will save the data read in the `./moisture_estimation/data` directory, specifically in the `Data_ID.txt` file. For example:
+    Note that, the detect.py saves automatically the collected data into a Data_ID.txt file, where 'ID' means the sensor's ID. The Data_ID.txt file is located in the ./moisture_estimation/data directory. For example:
 
     ```bash
     python ./moisture_estimation/detect.py
     ```
-
+    ![detect result](./data/detect.png)
+   
     ![detect](./data/detect_and_predict.gif)
 
-    ![detect result](./data/detect.png)
-
-6. **moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
+7. **moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
 
     ```bash
     python ./moisture_estimation/predict.py SensorID
     ```
-    For example, `python ./moisture_estimation/predict.py 8`. Then, you will obtain the corresponding soil moisture estimation for the tags at the time when our predict.py is running, and the results will be saved in `./moisture_estimation/vwc_estimation.txt`. (As shown in the figure below, the two estimation values are from data received by two different antennas. The `NaN` value in the moisture estimation result is because the antenna did not receive complete data.)
+    For example, to estiamte the soil moisture of SensorID=16 sensor, one may run: python ./moisture_estimation/predict.py 8. The estimated moisture levels are saved in ./moisture_estimation/vwc_estimation.txt. (As shown in the figure below, the two estimation values are from data received by two different antennas. The `NaN` value in the moisture estimation result is because the antenna did not receive complete data.)
 
     ![moisture estimation](./data/estimation.png)
 
-7. Continue operating the drone to proceed to the next tag deployment location.
+8. Continue operating the drone to proceed to the next tag deployment location.
 
-8. Stop reading after finishing measurements at all locations.
+9. Stop reading after finishing measurements at all locations.
     ```bash
     ps aux | grep Read  # find reading process
     ---
@@ -136,7 +136,7 @@ Recompile the modifiedx`ReadAsync.cs`:
     kill 52987  # kill process by process ID
     ```
 
-9. **Offline Estimation.**
+10. **Offline Estimation.**
 
 **Note**: if you want to change the in/out-put path and so on, please pay attention to lines 205, 206 in the predict.py and lines 8, 31, 56, 57, 69, 132 in the detect.py.
 
