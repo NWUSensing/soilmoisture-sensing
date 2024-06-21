@@ -119,7 +119,7 @@ Recompile the modifiedx`ReadAsync.cs`:
     ```bash
     python ./moisture_estimation/predict.py SensorID
     ```
-    For example, to estiamte the soil moisture of SensorID=16 sensor, one may run: python ./moisture_estimation/predict.py 8. The estimated moisture levels are saved in ./moisture_estimation/vwc_estimation.txt. (As shown in the figure below, the two estimation values are from data received by two different antennas. The `NaN` value in the moisture estimation result is because the antenna did not receive complete data.)
+    For example, to estiamte the soil moisture of SensorID=16 sensor, one may run: python `./moisture_estimation/predict.py 8`. The estimated moisture levels are saved in `./moisture_estimation/vwc_estimation.txt`. Note that, if you see an NaN value in the moisture estimation, it is because the antenna did not receive data.
 
     ![moisture estimation](./data/estimation.png)
 
