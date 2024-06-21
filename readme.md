@@ -99,9 +99,9 @@ Recompile the modifiedx`ReadAsync.cs`:
 
     Make sure the measured tags are in front of the reader’s antenna within <0.5m or even less. Note that the reader’s data collection program runs in the background until the end of the experiment.
 
-5. **Extract the data of our targeted RFID moisture sensors at each location.** 
+5. **Extract the data of a targeted RFID moisture sensors at each location.**
 
-    Run `detect.py`, and then our program will detect the sensor IDs that can be read. From these IDs, we can Extract and save the data of our targeted sensors at each location. For example, XXX
+    Run `detect.py`, and it detect sensor IDs that can be read. From these IDs, we can Extract and save the data of our targeted sensors at each location.
 
 
     Subsequently, the program will save the data read in the `./moisture_estimation/data` directory, specifically in the `Data_ID.txt` file. For example:
