@@ -14,50 +14,6 @@ The below figure shows the hardware connections of our system:
 **You may start to use our system from the `Quickstart'**
 
 
-## Directory Structure
-(1)	Reader controlling. Except for the `./moisture_estimation` directory, all other directories contain files used by the ThingMagic MercuryAPI to control the reader. Our code for controlling the reader is located in `./TMR_Read`, and by modifying the symbolic link file `ReadAsync.cs`, we can change the reader's behavior, such as the reading time on each channel  and TxPower.
-
-(2)	Data collection, preprocessing and moisture estimation.
-Regarding the `./moisture_estimation` directory, it includes all the code for processing reader data, as described below:
-
-**./moisture_estimation/data** : This directory stores all the collected data. Each file contains the metadata collected at a specific tag location. For example, the below figure shows measurement of sensor 16 and 19.
-
-![collect data](./data/collect_data.png)
-
-Contents of `Data_8.txt`:
-
-![collect data info](./data/Data_8.png)
-
-**./process/detect.py**: This python code will show the detected tags. More details are in “step 5 of Quickstart” below.
-
-**./process/predict.py**: This program estimates the soil moisture, and stores estimations in `./moisture_estimation/vwc_estimation.txt`. More details are in "step 6 of Quickstart" below.
-
-**./process/tag.txt**:  The txt file stores the RFID moisture sensor ID information. For Example:
-
-```text
-tag1,0010,0011
-tag2,0020,0021
-tag3,0030,0031
-tag4,0040,0041
-tag5,0050,0051
-tag6,0060,0061
-tag7,0070,0071
-tag8,0080,0081
-tag9,0090,0091
-...
-```
-
-The first column is the RFID sensor ID, each sensor includes two tags, the second column represents the sensing tag ID, and the third column indicates the reference tag ID. The tag ID consists of 4 digits in total, with the first three digits corresponding to the sensor ID. The last digit, '1', represents a sensing tag, while '0' represents a reference tag.
-
-(3)	Others. 
-Our code consists of two main parts: dotnet code for controlling the reader to perform tag reading, and python code with the environment already set up using venv. For dotnet environment configuration, please refer to `ReadMe_Linux_Install_CompileRun_Steps.txt`. To activate our virtual environment named "virtual" for python, simply use the command `source ./moisture_estimation/env/bin/activate`.
-
-Recompile the modifiedx`ReadAsync.cs`:
-
-`dotnet clean Samples/Codelets/ReadAsyncLinux/ReadAsyncLinux.csproj`
-
-`dotnet build Samples/Codelets/ReadAsyncLinux/ReadAsyncLinux.csproj`
-
 ## Quickstart
 
 1. **Power on the system.** Deploy the RFID reader and Raspberry Pi on UAV. Then, power on the RFID reader and Raspberry Pi.
@@ -114,18 +70,10 @@ Recompile the modifiedx`ReadAsync.cs`:
    
     ![detect](./data/detect_and_predict.gif)
 
-6. **moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
+6. Pilot the drone to fly to the next targeted RFID moisture sensor, and repeat the previous step 5. Extract the data of a targeted RFID moisture sensors at each location’ until the sensor data of all locations are collected.
 
-    ```bash
-    python ./moisture_estimation/predict.py SensorID
-    ```
-    For example, to estiamte the soil moisture of SensorID=16 sensor, one may run: python `./moisture_estimation/predict.py 8`. The estimated moisture levels are saved in `./moisture_estimation/vwc_estimation.txt`. Note that, if you see an NaN value in the moisture estimation, it is because the antenna did not receive data.
+7. Stop RFID reader after finishing data collection at all locations.
 
-    ![moisture estimation](./data/estimation.png)
-
-7. Continue operating the drone to proceed to the next tag deployment location.
-
-8. Stop reading after finishing measurements at all locations.
     ```bash
     ps aux | grep Read  # find reading process
     ---
@@ -136,9 +84,61 @@ Recompile the modifiedx`ReadAsync.cs`:
     kill 52987  # kill process by process ID
     ```
 
-9. **Offline Estimation.**
+8. **moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
 
-**Note**: if you want to change the in/out-put path and so on, please pay attention to lines 205, 206 in the predict.py and lines 8, 31, 56, 57, 69, 132 in the detect.py.
+    ```bash
+    python ./moisture_estimation/predict.py SensorID
+    ```
+    For example, to estiamte the soil moisture of SensorID=16 sensor, one may run: python `./moisture_estimation/predict.py 8`. The estimated moisture levels are saved in `./moisture_estimation/vwc_estimation.txt`. Note that, if you see an NaN value in the moisture estimation, it is because the antenna did not receive data.
+
+    ![moisture estimation](./data/estimation.png)
+
+**Note**: if you want to change the in/out-put path and so on, please pay attention to predict.py and detect.py.
+
+
+## Directory Structure
+(1)	Reader controlling. Except for the `./moisture_estimation` directory, all other directories contain files used by the ThingMagic MercuryAPI to control the reader. Our code for controlling the reader is located in `./TMR_Read`, and by modifying the symbolic link file `ReadAsync.cs`, we can change the reader's behavior, such as the reading time on each channel  and TxPower.
+
+(2)	Data collection, preprocessing and moisture estimation.
+Regarding the `./moisture_estimation` directory, it includes all the code for processing reader data, as described below:
+
+**./moisture_estimation/data** : This directory stores all the collected data. Each file contains the metadata collected at a specific tag location. For example, the below figure shows measurement of sensor 16 and 19.
+
+![collect data](./data/collect_data.png)
+
+Contents of `Data_8.txt`:
+
+![collect data info](./data/Data_8.png)
+
+**./process/detect.py**: This python code will show the detected tags. More details are in “step 5 of Quickstart” below.
+
+**./process/predict.py**: This program estimates the soil moisture, and stores estimations in `./moisture_estimation/vwc_estimation.txt`. More details are in "step 6 of Quickstart" below.
+
+**./process/tag.txt**:  The txt file stores the RFID moisture sensor ID information. For Example:
+
+```text
+tag1,0010,0011
+tag2,0020,0021
+tag3,0030,0031
+tag4,0040,0041
+tag5,0050,0051
+tag6,0060,0061
+tag7,0070,0071
+tag8,0080,0081
+tag9,0090,0091
+...
+```
+
+The first column is the RFID sensor ID, each sensor includes two tags, the second column represents the sensing tag ID, and the third column indicates the reference tag ID. The tag ID consists of 4 digits in total, with the first three digits corresponding to the sensor ID. The last digit, '1', represents a sensing tag, while '0' represents a reference tag.
+
+(3)	Others. 
+Our code consists of two main parts: dotnet code for controlling the reader to perform tag reading, and python code with the environment already set up using venv. For dotnet environment configuration, please refer to `ReadMe_Linux_Install_CompileRun_Steps.txt`. To activate our virtual environment named "virtual" for python, simply use the command `source ./moisture_estimation/env/bin/activate`.
+
+Recompile the modifiedx`ReadAsync.cs`:
+
+`dotnet clean Samples/Codelets/ReadAsyncLinux/ReadAsyncLinux.csproj`
+
+`dotnet build Samples/Codelets/ReadAsyncLinux/ReadAsyncLinux.csproj`
 
 ## Troubleshooting
 
