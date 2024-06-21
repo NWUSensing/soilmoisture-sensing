@@ -114,7 +114,7 @@ Recompile the modifiedx`ReadAsync.cs`:
    
     ![detect](./data/detect_and_predict.gif)
 
-7. **moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
+6. **moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
 
     ```bash
     python ./moisture_estimation/predict.py SensorID
@@ -123,9 +123,9 @@ Recompile the modifiedx`ReadAsync.cs`:
 
     ![moisture estimation](./data/estimation.png)
 
-8. Continue operating the drone to proceed to the next tag deployment location.
+7. Continue operating the drone to proceed to the next tag deployment location.
 
-9. Stop reading after finishing measurements at all locations.
+8. Stop reading after finishing measurements at all locations.
     ```bash
     ps aux | grep Read  # find reading process
     ---
@@ -136,7 +136,7 @@ Recompile the modifiedx`ReadAsync.cs`:
     kill 52987  # kill process by process ID
     ```
 
-10. **Offline Estimation.**
+9. **Offline Estimation.**
 
 **Note**: if you want to change the in/out-put path and so on, please pay attention to lines 205, 206 in the predict.py and lines 8, 31, 56, 57, 69, 132 in the detect.py.
 
