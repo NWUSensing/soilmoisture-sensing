@@ -70,9 +70,9 @@ The below figure shows the hardware connections of our system:
    
     ![detect](./data/detect_and_predict.gif)
 
-6. Pilot the drone to fly to the next targeted RFID moisture sensor, and repeat the previous step 5. Extract the data of a targeted RFID moisture sensors at each location’ until the sensor data of all locations are collected.
+6. **Pilot the drone to fly to the next targeted RFID moisture sensor, and repeat the previous step 5.** Extract the data of a targeted RFID moisture sensors at each location' until the sensor data of all locations are collected.
 
-7. Stop RFID reader after finishing data collection at all locations.
+7. **Stop RFID reader after finishing data collection at all locations.**
 
     ```bash
     ps aux | grep Read  # find reading process
@@ -97,9 +97,9 @@ The below figure shows the hardware connections of our system:
 
 
 ## Directory Structure
-(1)	Reader controlling. Except for the `./moisture_estimation` directory, all other directories contain files used by the ThingMagic MercuryAPI to control the reader. Our code for controlling the reader is located in `./TMR_Read`, and by modifying the symbolic link file `ReadAsync.cs`, we can change the reader's behavior, such as the reading time on each channel  and TxPower.
+(1)	**Reader controlling**. Except for the `./moisture_estimation` directory, all other directories contain files used by the ThingMagic MercuryAPI to control the reader. Our code for controlling the reader is located in `./TMR_Read`, and by modifying the symbolic link file `ReadAsync.cs`, we can change the reader's behavior, such as the reading time on each channel  and TxPower.
 
-(2)	Data collection, preprocessing and moisture estimation.
+(2)	**Data collection, preprocessing and moisture estimation**.
 Regarding the `./moisture_estimation` directory, it includes all the code for processing reader data, as described below:
 
 **./moisture_estimation/data** : This directory stores all the collected data. Each file contains the metadata collected at a specific tag location. For example, the below figure shows measurement of sensor 16 and 19.
@@ -131,7 +131,7 @@ tag9,0090,0091
 
 The first column is the RFID sensor ID, each sensor includes two tags, the second column represents the sensing tag ID, and the third column indicates the reference tag ID. The tag ID consists of 4 digits in total, with the first three digits corresponding to the sensor ID. The last digit, '1', represents a sensing tag, while '0' represents a reference tag.
 
-(3)	Others. 
+(3)	**Others**. 
 Our code consists of two main parts: dotnet code for controlling the reader to perform tag reading, and python code with the environment already set up using venv. For dotnet environment configuration, please refer to `ReadMe_Linux_Install_CompileRun_Steps.txt`. To activate our virtual environment named "virtual" for python, simply use the command `source ./moisture_estimation/env/bin/activate`.
 
 Recompile the modifiedx`ReadAsync.cs`:
