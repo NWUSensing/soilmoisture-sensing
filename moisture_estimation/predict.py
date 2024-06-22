@@ -29,7 +29,6 @@ def load_data(reader_data, ant_num, hygrometer_data=None, data_num=1, tag_list=N
     for group_name, group_df in groupedby_tagID:
         tagID_grouped_data[group_name] = group_df
         tagIDs.append(group_name)
-
     tagIDs, tag_datas = match_sensing_ref_hygrometer(tagIDs, tagID_grouped_data, hygrometer_data, offset, istest=istest)  
     freq_list = [i * 0.25 + 920.625 for i in range(0, 16) ]  
     # 根据MRTID对数据进行分组，每一个MRTID对应一组数据，
@@ -75,9 +74,9 @@ def match_sensing_ref_hygrometer(tags, tagID_grouped_data, hygrometer_name, offs
                                                                                                                 "phase": "phase2",
                                                                                                                 "RSSI": "RSSI2",
                                                                                                                 "frequency": "frequency2"})
-        sensing_and_ref = pd.merge_asof(tagID_grouped_data[tags[i]].sort_values("timestamp1"),
-                                       tagID_grouped_data[tags[len(tags)//2 + i]].sort_values("timestamp2"),
-                                       left_on="timestamp1", right_on="timestamp2", direction="nearest")  
+        sensing_and_ref = pd.merge_asof(tagID_grouped_data[tags[i]].sort_values("frequency1"),
+                                       tagID_grouped_data[tags[len(tags)//2 + i]].sort_values("frequency2"),
+                                       left_on="frequency1", right_on="frequency2", direction="nearest")  
         if not istest:  
             matched_data = pd.merge_asof(sensing_and_ref.sort_values("timestamp1"),
                                      hygrometer_data.sort_values("timestamp"),
