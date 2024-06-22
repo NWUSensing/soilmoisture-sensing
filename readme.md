@@ -44,7 +44,7 @@ The below figure shows the hardware connections of our system:
     ```
     ![turn on the reader](./data/turn_on_reader.png)
 
-    Check the tag information that the reader has currently read, if we see the output in bash similar to the following figure, we know the reader is working properly.
+    Check the tag information that the reader has currently read, if we see the output in bash similar to the following figure, we know the reader is working properly. (We didn’t collect MRT, so fill the gaps with zeros)
 
     ```bash
     tail --line 40 nohup.out
