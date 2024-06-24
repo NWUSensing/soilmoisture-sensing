@@ -74,7 +74,7 @@ while 1:
             # print("i am :",line)
             # print("len:",len(line))
             # becaues the file read may error or split's index isn't 9,we record the important position
-            previous_size =  f.tell()
+            previous_size = f.tell()
             
             # get the id
             id = line.split(',')[0]
@@ -91,7 +91,6 @@ while 1:
                 temp = B.index(id)
                 B_1[temp] = 1
                
-            
             # only tell us the detected tag'id once
             if temp != -1 and A_1[temp] and B_1[temp]  and TAG[temp] == -1:
                 # record the now tag begin id
@@ -119,32 +118,33 @@ while 1:
             elif (id == A[tag-1] or id == B[tag-1]) and i >= MAX :
                 now = int(line.split(',')[1])
                 frequency =  now
-                print("tag:",tag,"\nbegin:",begin,"      now:",now)
+                #print("tag:",tag,"\nbegin:",begin,"      now:",now)
                 
                 # write
                 if(now != begin and temp == tag - 1 and loop2 == 0):
-                    print("data source:",line.replace("\n","").split(",")[0])
-                    print("---writting:",tag,"---")
+                    # print("data source:",line.replace("\n","").split(",")[0])
+                    # print("---writting:",tag,"---")
                     loop = 1
-                    print("loop:",loop,"loop2:",loop2)
+                    # print("loop:",loop,"loop2:",loop2)
                     f2.write(line+"\n")
                 elif loop == 1 and now == begin :
-                    print("data source:",line.replace("\n","").split(",")[0])
-                    print("---writting:",tag,"---")
+                    # print("data source:",line.replace("\n","").split(",")[0])
+                    # print("---writting:",tag,"---")
                     loop2 = 1
-                    print("loop:",loop,"loop2:",loop2)
+                    # print("loop:",loop,"loop2:",loop2)
                     f2.write(line+"\n")
                 elif  loop2 == 1 and (now != begin) and temp == tag - 1: #and (abs(now-begin) == 250 or begin == 924375) and temp == tag - 1:
                     # stop write and exit the process and close the file 
                     # print("Frequency:",now)
-                    print("---ending:",tag,"---")
-                    print("loop:",loop,"loop2:",loop2)
+                    # print("---ending:",tag,"---")
+                    # print("loop:",loop,"loop2:",loop2)
                     f.close()
                     f2.close()
                     # use the tag as file name
                     os.rename("./moisture_estimation/data/Data.txt",("./moisture_estimation/data/Data_"+str(tag)+".txt"))
                     end_time = time.time()
-                    print("total time: ", end_time - start_time)
+                    print("total time: ", round(end_time - start_time, 2), "s")
+                    print("The sensor's data has been saved in Data_"+ str(tag) + ".txt.")    
                     exit()
 # python ./moisture_estimation/predict.py 19
             line = f.readline().replace("\n","")
@@ -158,5 +158,5 @@ while 1:
         # print(line)
         previous_size=previous_size+len(line)+1
         # print("指针后移，长度:",len(line))
-#f3.close()        
+#f3.close()    
  
