@@ -70,8 +70,7 @@ The below figure shows the hardware connections of our system:
 
     ![save sensor data](./data/save_data.png)
 
-6. **Pilot the drone to fly to the next targeted RFID moisture sensor, and repeat the previous step 5.** Extract the data of a targeted RFID moisture sensors at each location until the sensor data of all locations are collected.
-
+6. **Data collection over all locations**. Pilot the drone to fly to the next targeted RFID moisture sensor, and repeat the previous step 5, until the sensor data of all locations are collected.
 7. **Stop RFID reader after finishing data collection at all locations.**
 
     ```bash
@@ -84,7 +83,7 @@ The below figure shows the hardware connections of our system:
     kill 52987  # kill process by process ID
     ```
 
-8. **moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
+8. **Soil moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
 
     ```bash
     python ./moisture_estimation/predict.py SensorID
