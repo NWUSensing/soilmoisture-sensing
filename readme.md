@@ -66,7 +66,7 @@ The below figure shows the hardware connections of our system:
 
     ![detect result](./data/detect.png)
 
-    Note that, the detect.py saves automatically the collected data into a Data_ID.txt file, where 'ID' means the sensor's ID. The Data_ID.txt file is located in the `./moisture_estimation/data directory`. For example:
+    Note that, once you "input the sensor ID that you want to save its data", the detect.py will save the collected data into a Data_ID.txt file, where 'ID' means the sensor's ID. The Data_ID.txt file is located in the `./moisture_estimation/data directory`. For example:
 
     ![save sensor data](./data/save_data.png)
 
