@@ -5,6 +5,7 @@ using System.Text;
 // for Thread.Sleep
 using System.Threading;
 using System.Linq;
+using static System.IO.FileStream;
 
 
 // Reference the API
@@ -123,28 +124,28 @@ namespace ReadAsync
                         using (FileStream file = new FileStream(filepath, FileMode.Append))
                         {
                             using (StreamWriter writer = new StreamWriter(file))
-                            {
-
-                                
-                        writer.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}", e.TagReadData.EpcString.Replace(" ", ""),
-                            e.TagReadData.Frequency,
-                            e.TagReadData.Phase,
-                            e.TagReadData.Rssi,
-                            0, 0,
-                            e.TagReadData.Antenna,
-                            e.TagReadData.Time,
-                            epoch);
-             
-                        Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}\n", e.TagReadData.EpcString.Replace(" ", ""),
-                            e.TagReadData.Frequency,
-                            e.TagReadData.Phase,
-                            e.TagReadData.Rssi,
-                            0, 0,
-                            e.TagReadData.Antenna,
-                            e.TagReadData.Time,
-                            epoch);
-
+                            { 
+                                file.Lock(0, file.Length);
+                                writer.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}", e.TagReadData.EpcString.Replace(" ", ""),
+                                    e.TagReadData.Frequency,
+                                    e.TagReadData.Phase,
+                                    e.TagReadData.Rssi,
+                                    0, 0,
+                                    e.TagReadData.Antenna,
+                                    e.TagReadData.Time,
+                                    epoch);
+                                writer.Flush();
+                                file.Unlock(0, file.Length);
+                                Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}", e.TagReadData.EpcString.Replace(" ", ""),
+                                    e.TagReadData.Frequency,
+                                    e.TagReadData.Phase,
+                                    e.TagReadData.Rssi,
+                                    0, 0,
+                                    e.TagReadData.Antenna,
+                                    e.TagReadData.Time,
+                                    epoch);
                             }
+                           
                         }
                     };
 
@@ -165,14 +166,14 @@ namespace ReadAsync
                     {
                         foreach (var hoptable in freqs_list)
                         {
-                            int times = 6;
+                            int times = 2;
                             r.ParamSet("/reader/region/hopTable", hoptable);
                             while (times > 0)
                             {
                                 r.StartReading();
                             
                                 Console.WriteLine("\r\n<Do other work here>\r\n");
-                                Thread.Sleep(400);
+                                Thread.Sleep(200);
                                 //Console.WriteLine("\r\n<Do other work here>\r\n");
                                 //Thread.Sleep(500);
                                 r.StopReading(); 
@@ -180,7 +181,9 @@ namespace ReadAsync
                                 times = times - 1;
                                 //break;
                             }
+                            //Thread.Sleep(200);
                         }
+                        //Thread.Sleep(60000);
                         epoch = epoch + 1;
                         //break;
                     }
