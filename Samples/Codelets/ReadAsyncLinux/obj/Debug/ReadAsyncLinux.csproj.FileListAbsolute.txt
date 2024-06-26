@@ -1,0 +1,17 @@
+/home/user/Desktop/cs/Linux/ReadAsync
+/home/user/Desktop/cs/Linux/ReadAsync.deps.json
+/home/user/Desktop/cs/Linux/ReadAsync.runtimeconfig.json
+/home/user/Desktop/cs/Linux/ReadAsync.runtimeconfig.dev.json
+/home/user/Desktop/cs/Linux/ReadAsync.dll
+/home/user/Desktop/cs/Linux/ReadAsync.pdb
+/home/user/Desktop/cs/Samples/Codelets/ReadAsyncLinux/obj/Debug/ReadAsyncLinux.csproj.AssemblyReference.cache
+/home/user/Desktop/cs/Samples/Codelets/ReadAsyncLinux/obj/Debug/ReadAsyncLinux.GeneratedMSBuildEditorConfig.editorconfig
+/home/user/Desktop/cs/Samples/Codelets/ReadAsyncLinux/obj/Debug/ReadAsyncLinux.AssemblyInfoInputs.cache
+/home/user/Desktop/cs/Samples/Codelets/ReadAsyncLinux/obj/Debug/ReadAsyncLinux.AssemblyInfo.cs
+/home/user/Desktop/cs/Samples/Codelets/ReadAsyncLinux/obj/Debug/ReadAsyncLinux.csproj.CoreCompileInputs.cache
+/home/user/Desktop/cs/Samples/Codelets/ReadAsyncLinux/obj/Debug/ReadAsyn.3BEA09D6.Up2Date
+/home/user/Desktop/cs/Samples/Codelets/ReadAsyncLinux/obj/Debug/ReadAsync.dll
+/home/user/Desktop/cs/Samples/Codelets/ReadAsyncLinux/obj/Debug/refint/ReadAsync.dll
+/home/user/Desktop/cs/Samples/Codelets/ReadAsyncLinux/obj/Debug/ReadAsync.pdb
+/home/user/Desktop/cs/Samples/Codelets/ReadAsyncLinux/obj/Debug/ReadAsyncLinux.genruntimeconfig.cache
+/home/user/Desktop/cs/Samples/Codelets/ReadAsyncLinux/obj/Debug/ref/ReadAsync.dll
