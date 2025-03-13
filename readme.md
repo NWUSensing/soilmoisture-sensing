@@ -36,8 +36,10 @@ The below figure shows the hardware connections of our system:
     ![ssh connect](./data/remote_connet.gif)
    
     Remote Connection via local Wi-Fi: Ensure that the Raspberry Pi and laptop are connected to the same Wi-Fi, the WiFi name and password are fixed.
+    ```
     Wi-Fi name:aaa
     Wi-Fi password:12345678
+     ```
     Use `ssh user@GreenTag` to connect, and other operations are the same as using a 4G LTE.
    
 4. **Check if the reader is working properly.** Place one RFID tag or one of our RFID moisture sensor in front of the reader. Then, start the reader and redirect the output to nohup.out, keep the reader in a reading state until the end of the experiment, and activate the Python environment simultaneously.
