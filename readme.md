@@ -34,6 +34,7 @@ The below figure shows the hardware connections of our system:
     password: 12345678
     ```
     ![ssh connect](./data/remote_connet.gif)
+   
     Remote Connection via local Wi-Fi: Ensure that the Raspberry Pi and laptop are connected to the same Wi-Fi, the WiFi name and password are fixed.
     Wi-Fi name:aaa
     Wi-Fi password:12345678
