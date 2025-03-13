@@ -34,9 +34,12 @@ The below figure shows the hardware connections of our system:
     password: 12345678
     ```
     ![ssh connect](./data/remote_connet.gif)
-    Remote Connection via local Wi-Fi: Ensure that the Raspberry Pi and laptop are connected to the same Wi-Fi, use `ssh user@GreenTag` to connect, and other operations are the same as using a 4G LTE.
-
-3. **Check if the reader is working properly.** Place one RFID tag or one of our RFID moisture sensor in front of the reader. Then, start the reader and redirect the output to nohup.out, keep the reader in a reading state until the end of the experiment, and activate the Python environment simultaneously.
+    Remote Connection via local Wi-Fi: Ensure that the Raspberry Pi and laptop are connected to the same Wi-Fi, the WiFi name and password are fixed.
+    Wi-Fi name:aaa
+    Wi-Fi password:12345678
+    Use `ssh user@GreenTag` to connect, and other operations are the same as using a 4G LTE.
+   
+4. **Check if the reader is working properly.** Place one RFID tag or one of our RFID moisture sensor in front of the reader. Then, start the reader and redirect the output to nohup.out, keep the reader in a reading state until the end of the experiment, and activate the Python environment simultaneously.
 
     ```bash
     nohup Linux/ReadAsync tmr:///dev/ttyACM0 --ant 1,2 &
@@ -52,11 +55,11 @@ The below figure shows the hardware connections of our system:
 
     ![tail output](./data/nohupout.png)
 
-4. **Data collection with UAV.** Pilot the drone to fly to the targeted RFID moisture sensors, which include a reference tag and a sensing tag.
+5. **Data collection with UAV.** Pilot the drone to fly to the targeted RFID moisture sensors, which include a reference tag and a sensing tag.
 
     Make sure the measured tags are in front of the reader’s antenna within <0.5m or even less. Note that the reader’s data collection program runs in the background until the end of the experiment.
 
-5. **Extract the data of a targeted RFID moisture sensors at each location.**
+6. **Extract the data of a targeted RFID moisture sensors at each location.**
 
     Run `detect.py`, which detects sensor IDs that can be read. From these IDs, we can extract and save the data of our targeted sensors at each location.
 
@@ -70,8 +73,8 @@ The below figure shows the hardware connections of our system:
 
     ![save sensor data](./data/save_data.png)
 
-6. **Data collection over all locations**. Pilot the drone to fly to the next targeted RFID moisture sensor, and repeat the previous step 5, until the sensor data of all locations are collected.
-7. **Stop RFID reader after finishing data collection at all locations.**
+7. **Data collection over all locations**. Pilot the drone to fly to the next targeted RFID moisture sensor, and repeat the previous step 5, until the sensor data of all locations are collected.
+8. **Stop RFID reader after finishing data collection at all locations.**
 
     ```bash
     ps aux | grep Read  # find reading process
@@ -83,7 +86,7 @@ The below figure shows the hardware connections of our system:
     kill 52987  # kill process by process ID
     ```
 
-8. **Soil moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
+9. **Soil moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
 
     ```bash
     python ./moisture_estimation/predict.py SensorID
