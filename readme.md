@@ -120,23 +120,24 @@ Contents of `Data_80.txt`:
 
 ![collect data info](./data/Data_80.png)
 
-**./process/detect.py**: This python code will show the detected tags. More details are in “step 5 of Quickstart” below.
+**./moisture_estimation/detect.py**: This python code will show the detected tags. More details are in “step 5 of Quickstart” below.
 
-**./process/predict.py**: This program estimates the soil moisture, and stores estimations in `./moisture_estimation/vwc_estimation.txt`. More details are in "step 6 of Quickstart" below.
+**./moisture_estimation/predict.py**: This program estimates the soil moisture, and stores estimations in `./moisture_estimation/vwc_estimation.txt`. More details are in "step 6 of Quickstart" below.
 
-**./process/tag.txt**:  The txt file stores the RFID moisture sensor ID information. For Example:
+**./moisture_estimation/tag.txt**:  The txt file stores the RFID moisture sensor ID information. For Example:
 
 ```text
-tag11,00001100,E0001100
-tag12,00001200,E0001200
-tag13,00001300,E0001300
-tag14,00001400,E0001400
-tag15,00001500,E0001500
-tag16,00001600,E0001600
-tag17,00001700,E0001700
-tag18,00001800,E0001800
-tag19,00001900,E0001900
-tag20,00002000,E0002000
+tag30,00003000,E0003000
+tag31,00003100,E0003100
+tag32,00003200,E0003200
+tag33,00003300,E0003300
+tag34,00003400,E0003400
+tag35,00003500,E0003500
+tag36,00003600,E0003600
+tag37,00003700,E0003700
+tag38,00003800,E0003800
+tag39,00003900,E0003900
+tag40,00004000,E0004000
 ...
 ```
 
