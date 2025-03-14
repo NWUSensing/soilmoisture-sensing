@@ -54,7 +54,7 @@ The below figure shows the hardware connections of our system:
 
    Switch directory to /Desktop/my_zip/mercuryapi-1.37.3.29/cs
    ```
-    cd /Desktop/my_zip/mercuryapi-1.37.3.29/cs
+    cd ~/Desktop/my_zip/mercuryapi-1.37.3.29/cs
    ```
     ```bash
     nohup Linux/ReadAsync tmr:///dev/ttyACM0 --ant 1,2 &
@@ -106,7 +106,7 @@ The below figure shows the hardware connections of our system:
     ```bash
     python ./moisture_estimation/predict.py SensorID
     ```
-    For example, to estiamte the soil moisture of SensorID=8 sensor, one may run: python `./moisture_estimation/predict.py 8`. The estimated moisture levels are saved in `./moisture_estimation/vwc_estimation.txt`. Note that, if you see an NaN value in the moisture estimation, it is because the antenna did not receive data.
+    For example, to estiamte the soil moisture of SensorID=80 sensor, one may run: python `./moisture_estimation/predict.py 80`. The estimated moisture levels are saved in `./moisture_estimation/vwc_estimation.txt`. Note that, if you see an NaN value in the moisture estimation, it is because the antenna did not receive data.
 
     ![moisture estimation](./data/estimation.png)
 
