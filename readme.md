@@ -60,7 +60,7 @@ The below figure shows the hardware connections of our system:
     tail --line 40 nohup.out
     ```
 
-    ![tail output](./data/nohupout.png)
+    ![tail output](./data/nohupout.PNG)
 
 6. **Data collection with UAV.** Pilot the drone to fly to the targeted RFID moisture sensors, which include a reference tag and a sensing tag.
 
