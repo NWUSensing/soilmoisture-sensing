@@ -20,7 +20,7 @@ The below figure shows the hardware connections of our system:
     2. Insert the sensing probe into the soil
     3. Press the power switch button to display the measurement result.
     4. Press and hold the power button to switch off
-  Note: Please recharge the battery when it is low.
+- Note: Please recharge the battery when it is low.
 ## Quickstart
 
 1. **Power on the system.** Deploy the RFID reader and Raspberry Pi on UAV. Then, power on the RFID reader and Raspberry Pi.
