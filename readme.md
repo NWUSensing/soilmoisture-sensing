@@ -15,6 +15,12 @@ The below figure shows the hardware connections of our system:
 ## Commercial moisture sensing device
 ![device](./data/Commercial_Moisture_Measuring_Instruments.png)
 - Commercial moisture sensing devices can display information such as moisture, temperature, and conductivity, which were used as real values in this experiment.
+- Steps to use:
+    1. Long press the power switch button to switch on
+    2. Insert the sensing probe into the soil
+    3. Press the power switch button to display the measurement result.
+    4. Press and hold the power button to switch off
+  Note: Please recharge the battery when it is low.
 ## Quickstart
 
 1. **Power on the system.** Deploy the RFID reader and Raspberry Pi on UAV. Then, power on the RFID reader and Raspberry Pi.
