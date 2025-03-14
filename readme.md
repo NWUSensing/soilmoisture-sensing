@@ -44,6 +44,10 @@ The below figure shows the hardware connections of our system:
    
 4. **Check if the reader is working properly.** Place one RFID tag or one of our RFID moisture sensor in front of the reader. Then, start the reader and redirect the output to nohup.out, keep the reader in a reading state until the end of the experiment, and activate the Python environment simultaneously.
 
+   Switch directory to /Desktop/my_zip/mercuryapi-1.37.3.29/cs
+   ```
+    cd /Desktop/my_zip/mercuryapi-1.37.3.29/cs
+   ```
     ```bash
     nohup Linux/ReadAsync tmr:///dev/ttyACM0 --ant 1,2 &
     source ./moisture_estimation/virtual/bin/activate
@@ -58,11 +62,11 @@ The below figure shows the hardware connections of our system:
 
     ![tail output](./data/nohupout.png)
 
-5. **Data collection with UAV.** Pilot the drone to fly to the targeted RFID moisture sensors, which include a reference tag and a sensing tag.
+6. **Data collection with UAV.** Pilot the drone to fly to the targeted RFID moisture sensors, which include a reference tag and a sensing tag.
 
     Make sure the measured tags are in front of the reader’s antenna within <0.5m or even less. Note that the reader’s data collection program runs in the background until the end of the experiment.
 
-6. **Extract the data of a targeted RFID moisture sensors at each location.**
+7. **Extract the data of a targeted RFID moisture sensors at each location.**
 
     Run `detect.py`, which detects sensor IDs that can be read. From these IDs, we can extract and save the data of our targeted sensors at each location.
 
@@ -76,8 +80,8 @@ The below figure shows the hardware connections of our system:
 
     ![save sensor data](./data/save_data.png)
 
-7. **Data collection over all locations**. Pilot the drone to fly to the next targeted RFID moisture sensor, and repeat the previous step 5, until the sensor data of all locations are collected.
-8. **Stop RFID reader after finishing data collection at all locations.**
+8. **Data collection over all locations**. Pilot the drone to fly to the next targeted RFID moisture sensor, and repeat the previous step 5, until the sensor data of all locations are collected.
+9. **Stop RFID reader after finishing data collection at all locations.**
 
     ```bash
     ps aux | grep Read  # find reading process
@@ -89,7 +93,7 @@ The below figure shows the hardware connections of our system:
     kill 52987  # kill process by process ID
     ```
 
-9. **Soil moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
+10. **Soil moisture estimation.** By running the code below, one can estimate soil moisture of a targeted sensor.
 
     ```bash
     python ./moisture_estimation/predict.py SensorID
