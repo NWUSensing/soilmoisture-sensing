@@ -14,7 +14,7 @@ The below figure shows the hardware connections of our system:
 **You may start to use our system from the `Quickstart'**
 ## Commercial moisture sensing device
 ![device](./data/Commercial_Moisture_Measuring_Instruments.png)
-Commercial moisture sensing devices can display information such as moisture, temperature, and conductivity, which were used as real values in this experiment.
+- Commercial moisture sensing devices can display information such as moisture, temperature, and conductivity, which were used as real values in this experiment.
 ## Quickstart
 
 1. **Power on the system.** Deploy the RFID reader and Raspberry Pi on UAV. Then, power on the RFID reader and Raspberry Pi.
