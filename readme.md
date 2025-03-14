@@ -112,13 +112,13 @@ The below figure shows the hardware connections of our system:
 (2) **Data collection, preprocessing and moisture estimation**.
 Regarding the `./moisture_estimation` directory, it includes all the code for processing reader data, as described below:
 
-**./moisture_estimation/data** : This directory stores all the collected data. Each file contains the metadata collected at a specific tag location. For example, the below figure shows measurement of sensor 16 and 19.
+**./moisture_estimation/data** : This directory stores all the collected data. Each file contains the metadata collected at a specific tag location. For example, the below figure shows measurement of sensor 19 and 80.
 
 ![collect data](./data/collect_data.png)
 
-Contents of `Data_8.txt`:
+Contents of `Data_80.txt`:
 
-![collect data info](./data/Data_8.png)
+![collect data info](./data/Data_80.png)
 
 **./process/detect.py**: This python code will show the detected tags. More details are in “step 5 of Quickstart” below.
 
