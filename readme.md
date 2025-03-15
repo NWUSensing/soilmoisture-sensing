@@ -48,7 +48,7 @@ The below figure shows the hardware connections of our system:
     Wi-Fi name:aaa
     Wi-Fi password:12345678
      ```
-    Use `ssh user@GreenTag` to connect , the connection password is `123456` , and other operations are the same as using a 4G LTE.
+    Use `ssh user@greentag` to connect , the connection password is `123456` , and other operations are the same as using a 4G LTE.
    
 4. **Check if the reader is working properly.** Place one RFID tag or one of our RFID moisture sensor in front of the reader. Then, start the reader and redirect the output to nohup.out, keep the reader in a reading state until the end of the experiment, and activate the Python environment simultaneously.
 
@@ -59,6 +59,7 @@ The below figure shows the hardware connections of our system:
     ```bash
     nohup Linux/ReadAsync tmr:///dev/ttyACM0 --ant 1,2 &
     source ./moisture_estimation/virtual/bin/activate
+    source myenv/bin/activate
     ```
     ![turn on the reader](./data/turn_on_reader.png)
 
