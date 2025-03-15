@@ -12,9 +12,9 @@ The below figure shows the hardware connections of our system:
 - Based on the collected RSS data, the Raspberry Pi can estimate the moisture levels by using the code shown in this repository.
 - To remotely access the Raspberry Pi, we connect a 4G LTE module to it. To use the 4G module, one needs to insert a local SIM card into it. Alternatively,  one can use a local Wi-Fi network for a short distance remote connection or test.
 **You may start to use our system from the `Quickstart'**
-## Commercial moisture sensing device
+## Commercial moisture sensor
 ![device](./data/Commercial_Moisture_Measuring_Instruments.png)
-- Commercial moisture sensing devices can display information such as moisture, temperature, and conductivity, which were used as real values in this experiment.
+- Commercial moisture sensing devices can display information such as moisture, temperature, and conductivity, which were used as ground truth in this experiment.
 - Steps to use:
     1. Long press the power switch button to switch on
     2. Insert the sensing probe into the soil
