@@ -26,7 +26,7 @@ The below figure shows the hardware connections of our system:
 1. **Power on the system.** Deploy the RFID reader and Raspberry Pi on UAV. Then, power on the RFID reader and Raspberry Pi.
 2. **Remote Connection.**
     We use VSCode's Remote SSH to connect remotely to the Raspberry Pi. If Visual Studio Code is not installed on laptop, please refer to [Connect over SSH with vscode](https://code.visualstudio.com/docs/remote/ssh-tutorial) for installation.
-    Then, open VS code, connect the Raspberry Pi with a laptop using a 4G LTE remote connection or a local Wi-Fi Conection. Once the connection is on, open the `/home/user/Desktop/soilmoisture-sensing` directory in the Pi via VS Code.
+    Then, open VS code, connect the Raspberry Pi with a laptop using a 4G LTE remote connection or a local Wi-Fi Conection. Once the connection is on, open the `~/Desktop/my_zip/mercuryapi-1.37.3.29/cs` directory in the Pi via VS Code.
 
     Remote Connection via 4G LTE:
     ```bash
