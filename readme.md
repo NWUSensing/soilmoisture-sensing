@@ -58,8 +58,7 @@ The below figure shows the hardware connections of our system:
    ```
     ```bash
     nohup Linux/ReadAsync tmr:///dev/ttyACM0 --ant 1,2 &
-    source ./moisture_estimation/virtual/bin/activate
-    source myenv/bin/activate
+    source ~/myenv/bin/activate
     ```
     ![turn on the reader](./data/turn_on_reader.png)
 
