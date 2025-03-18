@@ -49,6 +49,7 @@ The below figure shows the hardware connections of our system:
     Wi-Fi password:12345678
      ```
     In vscode, use `ssh user@greentag` to connect with the connection password `123456`, and other operations are the same as using 4G LTE.
+   ![wifi_connect](./data/wifi_connect.gif)
    
 4. **Check if the reader is working properly.** Place one RFID tag or one of our RFID moisture sensor in front of the reader. Then, start the reader and redirect the output to nohup.out, keep the reader in a reading state until the end of the experiment, and activate the Python environment simultaneously.
 
